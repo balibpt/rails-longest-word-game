@@ -1,0 +1,19 @@
+<h1>
+Result
+</h1>
+
+<p>
+  <% if @is_possible == false %>
+        <p>Sorry but <strong><%= @answer.upcase %></strong> can't be built out of <%= @letters %></p>
+  <% elsif @is_word == false %>
+        <p>Sorry but <strong><%= @answer.upcase %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+        <p><strong>Congratulations!</strong> <%= @answer.upcase %> is a valid English word!</p>
+  <% end %>
+</p>
+
+<div>
+  <%= link_to "Play again", "/new", class:"text-decoration-none" %>
+</div>
+
+Total Score: <%= session[:score] %>
